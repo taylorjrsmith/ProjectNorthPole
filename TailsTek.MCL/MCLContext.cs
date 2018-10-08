@@ -12,9 +12,10 @@ namespace TailsTek.MCL
 
         public MCLContext() : base("MCLDatabase")
         {
-            
+
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
 
     }
 }

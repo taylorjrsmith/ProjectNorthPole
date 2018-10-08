@@ -8,29 +8,31 @@ using TailsTek.MCL;
 
 namespace XmasListProject
 {
-    public partial class SiteMaster : MasterPage
+    public partial class MCL : System.Web.UI.MasterPage
     {
+        public bool RequiresLogin { get; set; }
+
         public User CurrentUser
         {
             get { return HTTPContextManager.GetUser(); }
         }
 
-        public bool RequiresLogin { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             CheckSignInState();
-        }
 
+        }
 
         public void CheckSignInState()
         {
             if (CurrentUser == null)
+            {
+                if (RequiresLogin)
+                    Response.Redirect("~/");
                 return;
+            }
 
-            litUser.Text = $"Welcome {CurrentUser.Name}";
-            liLogin.Visible = false;
-            liCreateList.Visible = true;
         }
     }
 }
