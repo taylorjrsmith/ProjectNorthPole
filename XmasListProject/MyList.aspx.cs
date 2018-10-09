@@ -14,7 +14,7 @@ namespace XmasListProject
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            ((MCL)Master).RequiresLogin = true;
+            ((MCL)Master).RequiresLogin = false;
             List<Product> products = new List<Product>();
             products.Add(new Product("Test Product", "/App_themes/logo.png", 249.99M, 1));
             products.AddRange(new MCLContext().Products.ToList());
@@ -29,11 +29,9 @@ namespace XmasListProject
                 var product = (Product)e.Item.DataItem;
 
                 Image image = (Image)e.Item.FindControl("imgItem");
-                Literal litPrice = (Literal)e.Item.FindControl("litPrice");
                 Literal litName = (Literal)e.Item.FindControl("litProductName");
 
                 image.ImageUrl = product.Image;
-                litPrice.Text = Math.Round(product.Price, 0).ToString();
                 litName.Text = product.Name;
             }
         }

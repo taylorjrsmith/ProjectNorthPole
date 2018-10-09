@@ -31,37 +31,43 @@
     <div class="col-md-3 ">
         <asp:Button runat="server" ID="btnAddItem" Text="Add new item" OnClick="btnAddItem_OnClick" CssClass="btn btn-green " />
     </div>
-    <asp:Repeater runat="server" ID="rptListItems" OnItemDataBound="rptListItems_OnItemDataBound">
-        <HeaderTemplate>
-            <div class="row">
-        </HeaderTemplate>
-        <ItemTemplate>
-            <div class="col-md-3" style="min-width: 400px; min-height: 400px; border: 2px solid black; border-radius: 10px;">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 style="text-align: center;">
-                            <asp:Literal runat="server" ID="litProductName"></asp:Literal></h2>
-                        <asp:Image runat="server" ID="imgItem" Style="margin: 0 10px;" Width="100%" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div style="min-height: 100px; position: absolute; bottom: 0; background: #56e39f; border-bottom-left-radius: 10px; border-top: 2px solid black; border-bottom-right-radius: 10px; border-bottom: 5px solid #56e39f;" class="col-md-12">
-                        <div class="col-md-4">
-                            <img src="App_themes/toypart.png" alt="number of toy parts" width="100%" />
-                        </div>
-                        <div class="col-md-8">
-                            <p style="font-size: 72px; text-align: left;">
-                                <asp:Literal runat="server" ID="litPrice"></asp:Literal>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <div class="section-title text-center center">
+                <h2>My List</h2>
+                <hr>
             </div>
 
-        </ItemTemplate>
-        <FooterTemplate>
-            </div>
-        </FooterTemplate>
-    </asp:Repeater>
+
+
+
+            <asp:Repeater runat="server" ID="rptListItems" OnItemDataBound="rptListItems_OnItemDataBound">
+                <HeaderTemplate>
+                    <div class="row">
+                        <div class="portfolio-items">
+                </HeaderTemplate>
+                <ItemTemplate>
+
+                    <div class="col-sm-6 col-md-3 col-lg-3 lorem">
+                        <div class="portfolio-item">
+                            <div class="hover-bg">
+                                <a href="img/portfolio/01-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                                    <div class="hover-text">
+                                        <asp:Literal runat="server" ID="litProductName"></asp:Literal></h2>
+                                    </div>
+                                    <asp:Image runat="server" ID="imgItem" CssClass="img-responsive" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ItemTemplate>
+                <FooterTemplate>
+                    </div>
+                </div>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
     </div>
 </asp:Content>
