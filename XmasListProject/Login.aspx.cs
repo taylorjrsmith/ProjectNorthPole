@@ -16,22 +16,35 @@ namespace XmasListProject
 
         }
 
-        protected void btnLogin_OnClick(object sender, EventArgs e)
+        protected void Login_Click(object sender, EventArgs e)
         {
-           Authenticate();
+
         }
 
         public void Authenticate()
         {
-            var user = Users.LoadUser_EditorPermissions(TextUser.Text, Convert.ToInt32(TextPin.Text),
-                TextPostcode.Text);
+            var user = Users.LoadUser_EditorPermissions(UserName.Text, Convert.ToInt32(UserPin.Text),
+                UserPostcode.Text);
 
             if (user != null)
             {
                 HTTPContextManager.SetUser(user);
-                ((SiteMaster)Master).CheckSignInState();
+                ((MCL)Master).CheckSignInState();
             }
         }
 
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+            Authenticate();
+            if (HTTPContextManager.GetUser() != null)
+            {
+                Response.Redirect("~/MyList");
+            }
+        }
+
+        protected void LoginButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

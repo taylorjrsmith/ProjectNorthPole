@@ -27,12 +27,9 @@ namespace XmasListProject
         public void CheckSignInState()
         {
             if (CurrentUser == null)
-            {
-                if (RequiresLogin)
-                    Response.Redirect("~/");
                 return;
-            }
 
+            userName.Text = $"<span class='fa fa-user'></span> Welcome back {CurrentUser.Name}";
         }
     }
 }

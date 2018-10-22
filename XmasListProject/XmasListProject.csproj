@@ -370,7 +370,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53151</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53151/</IISUrl>
+          <IISUrl>http://localhost:44393/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
           <IISAppRootUrl>http://localhost:53151/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

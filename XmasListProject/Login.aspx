@@ -13,18 +13,20 @@
                 <div class="form-group">
                     <label class="label" style="font-size: 18px; color: #888; font-family: 'Open Sans', sans-serif;">
                         Name</label>
-                    <asp:TextBox runat="server" ID="Name" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="UserName" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label class="label" style="font-size: 18px; color: #888; font-family: 'Open Sans', sans-serif;">
                         Pin</label>
-                    <asp:TextBox runat="server" ID="Pin" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="UserPin" TextMode="Password" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label class="label" style="font-size: 18px; color: #888; font-family: 'Open Sans', sans-serif;">
                         Postcode</label>
-                    <asp:TextBox runat="server" ID="Postcode" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="UserPostcode" CssClass="form-control"></asp:TextBox>
                 </div>
+                <asp:Button Text="Login" CssClass="btn" ID="LoginButton" OnClick="LoginButton_Click" runat="server" />
+                <asp:Button runat="server" ID="LoginButton2" OnClick="LoginButton2_Click" />
             </div>
         </div>
     </div>
